@@ -1,26 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
 <?import javafx.scene.control.*?>
-<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
-<?import layouttests.migfxml.sample1.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXSlider?>
-<MigPane id="rootPane" fx:controller="com.withwings.HelloController"
-         styleClass="main-panel"
-         layout="insets 20"
-         cols="[label, pref!][grow, 50::]"
-         rows=""
-         xmlns:fx="http://javafx.com/fxml">
-
-    <Label text="First Name:" /> <TextField fx:id="firstNameField" prefColumnCount="30" MigPane.cc="growx, wrap" />
-    <Label text="Last Name:" />	<TextField fx:id="lastNameField" prefColumnCount="30" MigPane.cc="growx, wrap" />
-
-    <Button text="Say Hello" onAction="#sayHello" MigPane.cc="skip, gap :push, gaptop 15, wrap" />
-             <JFXButton   styleClass="jfx-button"  text="phoenixS"/>
-<JFXSlider/>
-    <Label fx:id="messageLabel" styleClass="hello-message" MigPane.cc="span, growx, gaptop 15" />
-
-</MigPane >
+<TitledPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.withwings.HelloController">
+   <content>
+      <HBox fx:id="hBox" prefHeight="492.0" prefWidth="805.0" spacing="10.0">
+         <children>
+            <JFXTreeView fx:id="deviceContainer" prefHeight="354.0" prefWidth="514.0" />
+            <VBox prefHeight="354.0" prefWidth="491.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="1.0" prefHeight="23.0" prefWidth="494.0" text="Input Media Uri:" />
+                  <JFXTextField fx:id="uriTextField" alignment="CENTER" layoutX="1.0" />
+                  <ToolBar prefHeight="40.0" prefWidth="200.0">
+                     <items>
+                        <JFXButton fx:id="playButton" alignment="CENTER" layoutX="1.0" onMouseClicked="#play" text="Play" />
+                        <JFXButton fx:id="pauseButton" alignment="CENTER" layoutX="1.0" onMouseClicked="#pause" text="Pause" />
+                        <JFXButton fx:id="stopButton" alignment="CENTER" layoutX="1.0" onMouseClicked="#stop" text="Stop" />
+                     </items>
+                     <padding>
+                        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+                     </padding>
+                  </ToolBar>
+               </children>
+               <padding>
+                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </content>
+</TitledPane>
